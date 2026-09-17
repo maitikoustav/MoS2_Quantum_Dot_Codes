@@ -11,4 +11,9 @@ Step 4.
 After getting the TB parameters we use our real_tb_main.py code to calculate the real space tight binding model for triangular quantum dot and get the energy states and corresponding eigen functions.
 
 Step 5.
+In this step we calculate the wannier integrals using our code orbital_spread_new.py for every possible distances using the wannier functions from WANNIER90.
+
+Step 6.
+Then we calculate the configuration interaction matrix elements using our ci.py code and calculate the exciton and trion binding energies.
+
 
