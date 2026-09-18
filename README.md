@@ -1,19 +1,31 @@
-# MoS2_Quantum_Dot_Codes
-Here I have uploaded all my latest codes to calculate real space tight binding model for triangular MoS2 quantum dot. After that all the codes associated with this to calculate exciton and trion binding energies.
+INPUTS
 
-Step 1.
-This is the first step where we have to do the DFT calculation for the monolayer MoS2 for calculating the band structure. All the input files for VASP to calculate HSE06 band structure is attached with.
+# Input the number of different kind of atoms.
 
-Step 2.
-This is the step where we fit the DFT band structure with a Slater Koster tight binding model. Here we use our code tb_fitting.py.
+atom1=153
+atom2=54
+atom3=342
 
-Step 4.
-After getting the TB parameters we use our real_tb_main.py code to calculate the real space tight binding model for triangular quantum dot and get the energy states and corresponding eigen functions.
+# Number of orbitals in each atom in the same order above.
 
-Step 5.
-In this step we calculate the wannier integrals using our code orbital_spread_new.py for every possible distances using the wannier functions from WANNIER90.
+orbital1=5
+orbital2=5
+orbital3=3
 
-Step 6.
-Then we calculate the configuration interaction matrix elements using our ci.py code and calculate the exciton and trion binding energies.
+# This is the maximum length upto which we will take the hopping.
 
+r1st=3.21
+r2nd=4.10
 
+###### Band Numbers #######
+c1=1432
+v1=1431    ###### valence and conduction band indices
+Nc=12      ###### Number of valence bands and number of conduction bands  
+Nv=12
+
+NOTE:
+
+1. poscar.txt file contains the position of atoms in cartesian for the structure and poscar_ref.txt has the positions for the largest structure.
+2. At first we have to run real_tb_main.py, it will create Eigen.dat file which contains the eigenvalues of the real space tight binding Hamiltonian. eigval.npy and eigvec.npy are binary files which contains all the required eigenvalues and eigenvectors in their binary form.
+3. In the next step we have to run dis_idx.py keeping all the output files from the previous run. It will create distance_idx.npy file which contains all the distance information which is required to use the precomputed wannier integrals.
+4. In the last step we have to run ci.py which will calculate exciton and trion Hamiltonian and finally exciton and trion binding energies.
