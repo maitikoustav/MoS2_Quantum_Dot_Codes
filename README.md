@@ -28,4 +28,4 @@ NOTE:
 1. poscar.txt file contains the position of atoms in cartesian for the structure and poscar_ref.txt has the positions for the largest structure.
 2. At first we have to run real_tb_main.py, it will create Eigen.dat file which contains the eigenvalues of the real space tight binding Hamiltonian. eigval.npy and eigvec.npy are binary files which contains all the required eigenvalues and eigenvectors in their binary form.
 3. In the next step we have to run dis_idx.py keeping all the output files from the previous run. It will create distance_idx.npy file which contains all the distance information which is required to use the precomputed wannier integrals.
-4. In the last step we have to run ci.py which will calculate exciton and trion Hamiltonian and finally exciton and trion binding energies.
+4. In the last step we have to run ci.py which will calculate exciton and trion Hamiltonian and finally exciton and trion binding energies. V_ee.npy and V_eh.npy contains all the ee and eh integrals in binary format.
